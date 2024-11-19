@@ -1,0 +1,138 @@
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Barre de navigation horizontale en bas de la page */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 50;
+    display: flex;
+    justify-content: center;  /* Centre les éléments horizontalement */
+    padding: 10px 0;
+    cursor:pointer;
+}
+
+/* Liste des éléments de la barre de navigation */
+.nav-items {
+    list-style-type: none;
+    display: flex;  /* Utilise Flexbox pour aligner horizontalement les éléments */
+    justify-content: space-evenly;  /* Espace égal entre les éléments */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style de chaque élément de navigation */
+.nav-items li {
+    position: relative;
+    text-align: center;
+}
+
+/* Style des liens de la barre de navigation */
+.nav-items a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+/* Icônes dans les liens */
+.nav-items a i {
+    font-size: 20px;  /* Taille de l'icône */
+    display: block;
+    margin-bottom: 5px;  /* Espacement entre l'icône et le texte */
+}
+
+/* Effet de survol sur les liens */
+.nav-items a:hover {
+    background-color: #444;
+}
+
+/* Menu extensible (Sous-menu) */
+.expandable-menu {
+    display: none;         /* Masque le sous-menu par défaut */
+    position: absolute;
+    background-color: #444;
+    top: -80px;            /* Positionne le sous-menu au-dessus de l'élément */
+    left: 0;
+    right: 0;
+    border-radius: 4ren;
+    list-style-type: none;
+    padding: -5rem 1.5ren;
+    margin-inline: auto;
+    z-index: -1;
+    width: 100;
+    overflow: -moz-hidden-unscrollable;
+    transform: translateY(5ren) scale(.1);
+    transition: transform .5s cubic-bezier(.5, 1.8, .4, .8);
+
+    
+    
+    /* Applique Flexbox pour afficher les éléments du sous-menu horizontalement */
+    display: none;        
+    justify-content: center; /* Espace égal entre les éléments du sous-menu */
+    align-items: center;   /* Aligne les éléments verticalement au centre */
+}
+
+/* Style des éléments dans le sous-menu */
+.expandable-menu li {
+    margin: 0 0px;  /* Espacement entre les éléments du sous-menu */
+    flex-direction: colum;
+    align-items: center;
+    transition: color .4s;
+    display:flex;
+    color:var(--text-color);
+}
+
+/* Liens dans le sous-menu */
+.expandable-menu li a {
+    padding: 8px 20px;
+    background-color: #555;
+    text-align: center;
+    display: block;  /* S'assure que les liens s'affichent comme des blocs pour le clic */
+}
+
+/* Effet de survol dans le sous-menu */
+.expandable-menu li a:hover {
+    background-color: #666;
+}
+
+/* Apparition du menu lorsque l'élément "Plus" est cliqué */
+.expandable.active .expandable-menu {
+    display: flex;
+    transition: color .4s;
+}
+
+/* Styles de survol pour les éléments de la navigation */
+.nav-items li:hover > a {
+    background-color: #444;
+}
+
+/* Cibler l'icône "Plus" pour la couleur bleue */
+.expand-btn i {
+    color: blue; /* Applique la couleur bleue à l'icône "Plus" */
+    transition: transform 0.3s ease;  /* Animation fluide pour la rotation */
+}
+
+/* Rotation de l'icône lorsque le menu est ouvert */
+.expandable.active .expand-btn i {
+    transform: rotate(180deg);  /* Applique une rotation de 180 degrés à l'icône */
+}
+
+/* Optionnel: Ajouter une couleur bleue lors du survol */
+.expand-btn i:hover {
+    color: #007bff; /* Un bleu plus foncé ou un autre ton de bleu */
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet A</title>
+    <link rel="stylesheet" href="bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Barre de navigation inférieure -->
+    <div class="bottom-nav">
+        <ul class="nav-items">
+            <li><a href="#"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="#"><i class="fas fa-search"></i> Recherche</a></li>
+            <li class="expandable">
+                <a href="javascript:void(0);" class="expand-btn"><i class="fas fa-ellipsis-h"></i> Plus</a>
+                <ul class="expandable-menu">
+                    <li><a href="#"><i class="fas fa-cogs"></i> Paramètres</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Aide</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-comment-dots"></i> Messages</a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+        </ul>
+    </div>
+
+    <script src="bar.js"></script>
+</body>
+</html>
